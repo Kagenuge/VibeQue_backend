@@ -54,9 +54,13 @@ router.post('/api/songrequest', (req, res) => {
   //getTrackOnDemand();
 });
 
-router.get('/api/motiondetected', (req, res) => {
-  console.log('Motion detected!')
-  open(trackUrl);
+router.post('/api/motiondetected', (req, res) => {
+  console.log(req.body.motion);
+  console.log('Motion data received');
+  let motionState = req.body.motion;
+  if (motionState) {
+    open(trackUrl);
+  }
   res.send(200)
 });
 
