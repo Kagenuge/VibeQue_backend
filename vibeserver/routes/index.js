@@ -5,7 +5,7 @@ const Mplayer = require('mplayer');
 const SpotifyWebApi = require('spotify-web-api-node');
 require('dotenv').config();
 
-var trackUrl = 'https://open.spotify.com/track/03Fst3VTu65vDjTkTI2lkm?si=dd6WPkoISnaO2ySBf9e1jg';
+var trackUrl = 'https://p.scdn.co/mp3-preview/3eb16018c2a700240e9dfb8817b6f2d041f15eb1?cid=774b29d4f13844c495f206cafdad9c86';
 
 /* var trackId = '1InSh2VSAlU4SnhIGeUB0j';
 
@@ -59,9 +59,11 @@ router.post('/api/motiondetected', (req, res) => {
   console.log('Motion data received');
   let motionState = req.body.motion;
   if (motionState) {
-    open(trackUrl);
+    //open(trackUrl);
+    res.json(202, {link: trackUrl})
+  } else {
+    res.send(200)
   }
-  res.send(200)
 });
 
 module.exports = router;
