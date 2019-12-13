@@ -58,9 +58,11 @@ router.post('/api/motiondetected', (req, res) => {
   let motionState = req.body.motion;
   //Aloita timer joka vaihtaa
   if (motionState) {
-    open(trackUrl);
+    //open(trackUrl);
+    res.json(202, {link: trackUrl})
+  } else {
+    res.send(200)
   }
-  res.send(200)
 });
 
 
