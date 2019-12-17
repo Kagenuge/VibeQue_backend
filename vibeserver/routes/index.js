@@ -46,9 +46,9 @@ async function getTrackOnDemand() {
 }); */
 
 router.post('/api/songrequest', (req, res) => {
-  console.log(req.body)
+  console.log(req.body.trackUrl)
   trackUrl = req.body.trackUrl;
-  res.send('Request received')
+  res.json(200)
   //getTrackOnDemand();
 });
 
