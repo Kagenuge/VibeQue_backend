@@ -3,7 +3,8 @@ var router = express.Router();
 const open = require('open');
 require('dotenv').config();
 
-var trackUrl = 'https://p.scdn.co/mp3-preview/3eb16018c2a700240e9dfb8817b6f2d041f15eb1?cid=774b29d4f13844c495f206cafdad9c86';
+var trackUrl =
+  'https://p.scdn.co/mp3-preview/3eb16018c2a700240e9dfb8817b6f2d041f15eb1?cid=774b29d4f13844c495f206cafdad9c86';
 
 /* var trackId = '1InSh2VSAlU4SnhIGeUB0j';
 
@@ -46,10 +47,11 @@ async function getTrackOnDemand() {
 }); */
 
 router.post('/api/songrequest', (req, res) => {
-  console.log(req.body.trackUrl)
+  console.log(req.body.trackUrl);
   trackUrl = req.body.trackUrl;
-  res.json(200)
+  res.json(200);
   //getTrackOnDemand();
+  //
 });
 
 router.post('/api/motiondetected', (req, res) => {
@@ -59,11 +61,10 @@ router.post('/api/motiondetected', (req, res) => {
   //Aloita timer joka vaihtaa
   if (motionState) {
     //open(trackUrl);
-    res.json(202, {link: trackUrl})
+    res.json(202, { link: trackUrl });
   } else {
-    res.send(200)
+    res.send(200);
   }
 });
-
 
 module.exports = router;
