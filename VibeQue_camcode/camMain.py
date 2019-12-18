@@ -12,9 +12,10 @@ motionState = False
 while True:
     motionState = P3picam.motion()
     print(motionState)
-    res = requests.post('http://localhost:3000/api/motiondetected', json={"motion": motionState})
+    res = requests.post('http://localhost:3000/api/motiondetected',
+                        json={"motion": motionState})
     if res:
-        print('Response ok')
+        print('Response OK!')
         print(res)
     else:
         print('Response failed')
