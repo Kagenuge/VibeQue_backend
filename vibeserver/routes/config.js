@@ -1,6 +1,6 @@
 const conopts = {
-  user: 'pi',
-  password: '1234',
+  user: 'postgres',
+  password: 'potato',
   host: 'localhost',
   database: 'vibequeusers'
 }
