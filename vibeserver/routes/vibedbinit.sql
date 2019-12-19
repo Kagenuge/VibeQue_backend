@@ -7,5 +7,5 @@ CREATE DATABASE vibequeusers; */
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
   username varchar(255) NOT NULL,
-  ipaddress integer NOT NULL
+  ipaddress varchar(255) NOT NULL
 ); */
